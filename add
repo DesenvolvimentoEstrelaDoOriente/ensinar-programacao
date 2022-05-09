@@ -1,0 +1,22 @@
+[1mdiff --git a/Aula_FundamentosGit/apresentacaoModelo.html b/Aula_FundamentosGit/apresentacaoModelo.html[m
+[1mindex d8c5887..3fa5f1c 100644[m
+[1m--- a/Aula_FundamentosGit/apresentacaoModelo.html[m
+[1m+++ b/Aula_FundamentosGit/apresentacaoModelo.html[m
+[36m@@ -1,7 +1,13 @@[m
+ <html>[m
+     <body>[m
+[31m-        <h1>Meu nome é Caio.</h1>[m
+[31m-        <h2> Tenho 31 anos.</h2>[m
+[31m-        <h3>Gosto de suco de uva </h3>[m
+[32m+[m[32m        <h1>Teste ---------> 中文也行？</h1>[m
+[32m+[m[32m        <h2>Eu sou Luciano</h2>[m
+[32m+[m[32m        <h3>Gosto de jogos de esconde esconde.<===[|::::::::::::::::::::::::::::::::::> ..・ヾ(。＞＜)シ</h3>[m
+[32m+[m[32m        <h4>Gosto de miojo, mioja salva vida de um pobre estudande</h4>[m
+[32m+[m[32m        <h5>Não gosto de inverno nem o verão</h5>[m
+[32m+[m[32m        <h6>Mais eu gosto de dia chuvoso.</h6>[m
+[32m+[m[32m        <h7>pq a letra ta ficando pequeno ?</h7>[m
+[32m+[m[32m        <h8>🤔</h8>[m
+[32m+[m[32m        <h9>oxi</h9>[m
+     </body>[m
+ </html>[m
+\ No newline at end of file[m
