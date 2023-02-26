@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+ <!-- Exemplo tirado da página da Mozilla: https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/first-splash/number-guessing-game.html -->
+
+    <title>Jogo Adivinhe o Número</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .ultimoResultado {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Jogo Adivinhe o Número</h1>
+
+    <p>Escolhemos um número aleatório entre 1 e 100.Veja se você consegue adivinha-lo em até 10 turnos. Nós te informaremos se a sua tentativa foi muito alta ou muito baixa.</p>
+
+    <div class="form">
+      <label for="campoPalpite">Tente adivinhar: </label>
+      <input type="number" min="1" max="100" required id="campoPalpite" class="campoPalpite">
+      <input type="submit" value="Fazer tentativa" class="envioPalpite">
+    </div>
+
+    <div class="resultParas">
+      <p class="palpites"></p>
+      <p class="ultimoResultado"></p>
+      <p class="baixoOuAlto"></p>
+    </div>
+
+    <script>
+      // Seu Javascript irá aqui
+    </script>
+  </body>
+</html>
