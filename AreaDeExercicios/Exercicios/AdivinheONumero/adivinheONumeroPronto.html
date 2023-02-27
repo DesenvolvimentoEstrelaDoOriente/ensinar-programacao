@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+ <!-- Exemplo tirado da página da Mozilla: https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/first-splash/number-guessing-game.html -->
+
+    <title>Jogo Adivinhe o Número</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .ultimoResultado {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Jogo Adivinhe o Número</h1>
+
+    <p>Escolhemos um número aleatório entre 1 e 100.Veja se você consegue adivinha-lo em até 10 turnos. Nós te informaremos se a sua tentativa foi muito alta ou muito baixa.</p>
+
+    <div class="form">
+      <label for="campoPalpite">Tente adivinhar: </label>
+      <input type="number" min="1" max="100" required id="campoPalpite" class="campoPalpite">
+      <input type="submit" value="Fazer tentativa" class="envioPalpite">
+    </div>
+
+    <div class="resultParas">
+      <p class="palpites"></p>
+      <p class="ultimoResultado"></p>
+      <p class="baixoOuAlto"></p>
+    </div>
+
+    <script>
+      let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+      const palpites = document.querySelector('.palpites');
+      const ultimoResultado = document.querySelector('.ultimoResultado');
+      const baixoOuAlto = document.querySelector('.baixoOuAlto');
+      const envioPalpite = document.querySelector('.envioPalpite');
+      const campoPalpite = document.querySelector('.campoPalpite');
+      let contagemPalpites = 1;
+      let botaoReinicio;
+
+      function conferirPalpite() {
+        const palpiteUsuario = Number(campoPalpite.value);
+        if (contagemPalpites === 1) {
+          palpites.textContent = 'Tentativas anteriores: ';
+        }
+
+        palpites.textContent += palpiteUsuario + ' ';
+
+        if (palpiteUsuario === numeroAleatorio) {
+          ultimoResultado.textContent = 'Parabéns! Você acertou!';
+          ultimoResultado.style.backgroundColor = 'green';
+          baixoOuAlto.textContent = '';
+          configFimDeJogo();
+        } else if (contagemPalpites === 10) {
+          ultimoResultado.textContent = '!!!FIM DO JOGO!!!';
+          baixoOuAlto.textContent = '';
+          configFimDeJogo();
+        } else {
+          ultimoResultado.textContent = 'Errado!';
+          ultimoResultado.style.backgroundColor = 'red';
+          if(palpiteUsuario < numeroAleatorio) {
+            baixoOuAlto.textContent = 'Última tentativa foi muito baixa!' ;
+          } else if(palpiteUsuario > numeroAleatorio) {
+            baixoOuAlto.textContent = 'Última tentativa foi muito alta!';
+          }
+        }
+
+        contagemPalpites++;
+        campoPalpite.value = '';
+        campoPalpite.focus();
+      }
+
+      envioPalpite.addEventListener('click', conferirPalpite);
+
+      function configFimDeJogo() {
+        campoPalpite.disabled = true;
+        envioPalpite.disabled = true;
+        botaoReinicio = document.createElement('button');
+        botaoReinicio.textContent = 'Começar um novo jogo';
+        document.body.appendChild(botaoReinicio);
+        botaoReinicio.addEventListener('click', reiniciarJogo);
+      }
+
+      function reiniciarJogo() {
+        contagemPalpites = 1;
+        const resetParas = document.querySelectorAll('.resultParas p');
+        for (const resetPara of resetParas) {
+          resetPara.textContent = '';
+        }
+
+        botaoReinicio.parentNode.removeChild(botaoReinicio);
+        campoPalpite.disabled = false;
+        envioPalpite.disabled = false;
+        campoPalpite.value = '';
+        campoPalpite.focus();
+        ultimoResultado.style.backgroundColor = 'white';
+        numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+      }
+    </script>
+  </body>
+</html>
