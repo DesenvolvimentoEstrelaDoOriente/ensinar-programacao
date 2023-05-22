@@ -47,7 +47,61 @@
     </div>
 
     <script>
-      // Seu Javascript irá aqui
+      var tentativas = 0;
+      var valorAlvo = Math.floor(Math.random() * 100) + 1;
+      console.log("Alvo: " + valorAlvo)
+      var nomeUsuario = "Meu nome é caio";
+      
+      var campoPalpite = document.querySelector('.campoPalpite');
+      var envioPalpite = document.querySelector('.envioPalpite');
+      envioPalpite.addEventListener('click', conferirPalpite);
+
+
+      function conferirPalpite(){
+        var valorDaTentativa = Number(campoPalpite.value)
+        tentativas = tentativas + 1;
+        console.log(tentativas); 
+
+        // Codigo para saber se é menor, maior ou igua
+
+        verificarValor(valorDaTentativa);
+
+
+
+        if(tentativas >= 10){
+          alert("FIM DE JOGO");
+        }
+
+      
+      
+      }
+
+      function verificarValor(valorDaTentativa){
+
+        console.log(valorDaTentativa);
+        if (valorDaTentativa > valorAlvo) {
+          alert("valor maior")
+          // tentativa 5: valor ....
+        }
+
+        "Tentativa 1: valor maior"
+
+        if(valorDaTentativa < valorAlvo){
+          alert("valor menor");
+        }
+
+        if(valorDaTentativa == valorAlvo){
+          alert("valor igual");
+        } 
+      }
+      
+
+      function dizerOla(foo){
+        alert("Ola " + foo);
+      }
+
+
+
     </script>
   </body>
 </html>

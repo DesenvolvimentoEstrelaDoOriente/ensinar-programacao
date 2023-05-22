@@ -1,0 +1,23 @@
+- pegar um numero aleatorio de 1 a 100, definir como alvo 
+- o jogador tem 10 tentativas para adivinhar esse numero
+- escreve o numero na caixa de texto
+- clica no botão 
+- pegar valor da tentiva, compara ele com o alvo
+	- se a tentativa for maior, que o alvo:
+		- Se jogador ainda possui tentativas
+			- mostra mensagem "muito alto"
+			- mostra mensagem "Errado"
+			- coloca numero da tentativa na lista de tentativas anteriores
+			- aumenta o contador de tentativas
+		- Se jogador não possui tentativas:
+		
+	- se a tentativa for menor que o alvo:
+	- mostra mensagem "muito baixo"
+		- mostra mensagem "Errado"
+		- coloca numero da tentativa na lista de tentativas anteriores
+		- aumenta o contador de tentativas
+		
+	- se a tentativa for igual ao alvo
+		- Mostra mensagem "certo"
+		- Mostra mensagem "Parabens"
+		- Mostra botão de "Novo jogo"

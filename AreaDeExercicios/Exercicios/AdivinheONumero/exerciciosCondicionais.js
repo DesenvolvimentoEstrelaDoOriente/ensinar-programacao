@@ -1,6 +1,9 @@
 function demonstracao(){
     var condicao = true;
+    var numero = 12;
     
+
+
     if(condicao){
 
 
