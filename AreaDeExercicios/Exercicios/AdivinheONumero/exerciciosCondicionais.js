@@ -31,3 +31,7 @@ function exElegivelParaVotar(anoNascimento) {
 function exVendaDeMacas(quantidade) {
     
 }
+
+function exercicio04() {
+    
+}
